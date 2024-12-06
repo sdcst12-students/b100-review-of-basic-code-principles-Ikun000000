@@ -13,3 +13,21 @@ Your program should ask the user for
 * The program will calculate the amount of interest earned and display it.
 * Appropriate formatting of the output is a requirement for this assignment
 """
+
+x=float(input("Enter inital investment: "))
+x1=float(input("Enter the annual interest rate as a percentage: "))
+y=x1/100
+x2=str(input("Enter the unit(Years, Months, Days): "))
+x3=float(input("Enter the lenth of time: "))
+if x2==("Years"):
+  i=round(x*y*x3, 2)
+  print(f"The interest is {i} dollars.")
+if x2==("Months"):
+  i1= round(x*y*x3/12,2)
+  print(f"The interest is {i1} dollars.")
+if x2==("Days"):
+  i2= round(x*y*x3/365,2)
+  print(f"The interest is {i2} dollars.")
+else:
+  print("Error, please enter again.")
+  
