@@ -39,3 +39,19 @@ def main():
 
 if __name__ == "__main__":
   main()
+
+  P=float(input("Enter inital debt: "))
+R=float(input("Enter the monthly interest rate in percentage: "))/100
+p=int(input("monthly payment: "))
+I=0
+c=0
+while P>0:
+    i=P*R
+    I+=i
+    P+=i-p
+    c+=1
+    if P<0:
+        d=0
+        break
+print(f"It'll take you {c} months to pay off your debt")
+print(f"You'll have to pay ${round(I, 2)} in interest")
