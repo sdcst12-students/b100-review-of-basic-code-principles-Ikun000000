@@ -22,4 +22,19 @@ rate: 5%
 final balance: 1320.68
 
 """
+x=float(input("Enter annual investment: "))
+x1=float(input("Enter annual interest rate(as a percentage): "))
+y1= x1/100
+x2=int(input("Enter the lenth of time(Years): "))
+B=0
+p=0
+A=x
+for i in range(1,x2+1):
+  T=(x+p)*y1*i+x
+  p+=x
+  B+=T
+  A+=T
+  print(i,round(B,2))
+  print(B)
+
 
