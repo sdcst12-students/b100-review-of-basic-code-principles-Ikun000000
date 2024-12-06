@@ -22,3 +22,36 @@ How many months will it take him to pay off the car.  How much interest has he p
 He will have paid 21711.60 in interest
 """
 
+ranks = "A23456789TJQK"
+suits = "CDHS"
+
+def createDeck():
+  cardlist = [ranks[i]+suits[j] for i in range(len(ranks)) for j in range (len(suits))]
+  return cardlist
+
+def main():
+  deck = createDeck()
+  print(deck)
+  assert "AS" in deck
+  assert "KC" in deck
+  assert deck.count("TC") == 1
+
+
+if __name__ == "__main__":
+  main()
+
+  P=float(input("Enter inital debt: "))
+R=float(input("Enter the monthly interest rate in percentage: "))/100
+p=int(input("monthly payment: "))
+I=0
+c=0
+while P>0:
+    i=P*R
+    I+=i
+    P+=i-p
+    c+=1
+    if P<0:
+        d=0
+        break
+print(f"It'll take you {c} months to pay off your debt")
+print(f"You'll have to pay ${round(I, 2)} in interest")
