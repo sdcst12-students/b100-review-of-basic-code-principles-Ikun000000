@@ -14,20 +14,20 @@ Your program should ask the user for
 * Appropriate formatting of the output is a requirement for this assignment
 """
 
-x=float(input("Enter inital investment: "))
-x1=float(input("Enter the annual interest rate as a percentage: "))
-y=x1/100
-x2=str(input("Enter the unit(Years, Months, Days): "))
-x3=float(input("Enter the lenth of time: "))
-if x2==("Years"):
-  i=round(x*y*x3, 2)
-  print(f"The interest is {i} dollars.")
-if x2==("Months"):
-  i1= round(x*y*x3/12,2)
-  print(f"The interest is {i1} dollars.")
-if x2==("Days"):
-  i2= round(x*y*x3/365,2)
-  print(f"The interest is {i2} dollars.")
+P = float(input("Enter an intial investment: "))
+r = float(input("Enter the annual interest rate in percentage: "))
+x = input("Enter in date(d) / year(y) or month(m): ")
+if x == "d":
+  t = int(input("Enter number of days: "))
+  t = t/365
+elif x == "y":
+  t = int(input("Enter number of years: "))
+elif x == "m":
+  t = int(input("Enter number of months: "))
+  t = t/12
 else:
-  print("Error, please enter again.")
+  print("Somethings wrong")
+I = P * r / 100 * t
+I = round(I,2)
+print(f"The amount of simple interest for your investment is ${I}")
   
